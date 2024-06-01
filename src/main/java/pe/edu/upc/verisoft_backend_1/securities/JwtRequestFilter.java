@@ -21,13 +21,7 @@ import java.io.IOException;
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
 
-    private static final String[] PUBLIC_URLS = {
-            "/api/v1/auth/**", "/v2/api-docs", "/v3/api-docs", "/v3/api-docs/**",
-            "/swagger-resources", "/swagger-resources/**", "/configuration/ui",
-            "/configuration/security", "/swagger-ui/**", "/webjars/**",
-            "/swagger-ui.html", "/api/auth/**", "/api/test/**", "/authenticate",
-            "/seguros"
-    };
+
 
     @Autowired
     private JwtUserDetailsService jwtUserDetailsService;
@@ -41,11 +35,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         String username = null;
         String jwtToken = null;
 
-        // Si la URL es pública, omitir la autenticación
-        if (isPublicUrl(request.getRequestURI())) {
-            chain.doFilter(request, response);
-            return;
-        }
+
 
         if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
             jwtToken = requestTokenHeader.substring(7);
@@ -73,14 +63,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         chain.doFilter(request, response);
     }
 
-    private boolean isPublicUrl(String requestUri) {
-        for (String publicUrl : PUBLIC_URLS) {
-            if (requestUri.startsWith(publicUrl)) {
-                return true;
-            }
-        }
-        return false;
-    }
+
 }
 
 
