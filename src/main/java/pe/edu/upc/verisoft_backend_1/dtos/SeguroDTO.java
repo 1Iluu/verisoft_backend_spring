@@ -1,35 +1,34 @@
 package pe.edu.upc.verisoft_backend_1.dtos;
 
-
-
 public class SeguroDTO {
-    private int Seguro_ID;
 
-    private String TipoSeguro;
+    private int idseguro;
 
-    private String DescSeguro;
+    private String nombreseguro;
 
-    public int getSeguro_ID() {
-        return Seguro_ID;
+    private String tiposeguro;
+
+    public int getIdseguro() {
+        return idseguro;
     }
 
-    public void setSeguro_ID(int seguro_ID) {
-        Seguro_ID = seguro_ID;
+    public void setIdseguro(int idseguro) {
+        this.idseguro = idseguro;
     }
 
-    public String getTipoSeguro() {
-        return TipoSeguro;
+    public String getNombreseguro() {
+        return nombreseguro;
     }
 
-    public void setTipoSeguro(String tipoSeguro) {
-        TipoSeguro = tipoSeguro;
+    public void setNombreseguro(String nombreseguro) {
+        this.nombreseguro = nombreseguro;
     }
 
-    public String getDescSeguro() {
-        return DescSeguro;
+    public String getTiposeguro() {
+        return tiposeguro;
     }
 
-    public void setDescSeguro(String descSeguro) {
-        DescSeguro = descSeguro;
+    public void setTiposeguro(String tiposeguro) {
+        this.tiposeguro = tiposeguro;
     }
 }
