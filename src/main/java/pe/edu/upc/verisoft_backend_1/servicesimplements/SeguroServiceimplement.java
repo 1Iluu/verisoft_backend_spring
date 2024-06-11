@@ -28,4 +28,9 @@ mR.save(seguro);
     public void delete(int id) {
         mR.deleteById(id);
     }
+
+    @Override
+    public Seguro listId(int id) {return mR.findById(id).orElse(new Seguro());}
+
+
 }

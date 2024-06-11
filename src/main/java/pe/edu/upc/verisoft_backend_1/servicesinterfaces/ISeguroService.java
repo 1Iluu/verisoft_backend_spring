@@ -11,4 +11,8 @@ public interface ISeguroService {
     public List<Seguro> list();
 
     public void delete(int id);
+
+    public Seguro listId(int id);
+
+
 }

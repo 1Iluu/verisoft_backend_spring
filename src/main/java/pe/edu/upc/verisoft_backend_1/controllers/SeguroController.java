@@ -24,6 +24,15 @@ public class SeguroController {
         Seguro seguro = d.map(seguroDTO, Seguro.class);
         mS.insert(seguro);
     }
+
+    @PutMapping
+    public void modificar(@RequestBody SeguroDTO seguroDTO) {
+        ModelMapper d = new ModelMapper();
+        Seguro seguro = d.map(seguroDTO, Seguro.class);
+        mS.insert(seguro);
+    }
+
+
     @GetMapping
     public List<SeguroDTO> listar(){
         return mS.list().stream().map(y->{
@@ -37,6 +46,15 @@ public class SeguroController {
         mS.delete(id);
 
     }
+
+    @GetMapping("/{id}")
+    public SeguroDTO listarId(@PathVariable("id") Integer id) {
+        ModelMapper m = new ModelMapper();
+        SeguroDTO dto = m.map(mS.listId(id), SeguroDTO.class);
+        return dto;
+    }
+
+
 
 
 
