@@ -16,8 +16,6 @@ public class Cita {
     private int hora;
     @Column(name ="motivo", nullable = false, length = 100)
     private String motivo;
-    @Column(name ="estado", nullable = false, length = 20)
-    private String estado;
     @Column(name ="Consultorio", nullable = false, length = 20)
     private String  Consultorio;
     @ManyToOne
@@ -30,12 +28,11 @@ public class Cita {
     public Cita() {
     }
 
-    public Cita(int idCita, LocalDate fecha, int hora, String motivo, String estado, String consultorio, Paciente paciente, Oncologo oncologo) {
+    public Cita(int idCita, LocalDate fecha, int hora, String motivo, String consultorio, Paciente paciente, Oncologo oncologo) {
         this.idCita = idCita;
         Fecha = fecha;
         this.hora = hora;
         this.motivo = motivo;
-        this.estado = estado;
         Consultorio = consultorio;
         this.paciente = paciente;
         this.oncologo = oncologo;
@@ -71,14 +68,6 @@ public class Cita {
 
     public void setMotivo(String motivo) {
         this.motivo = motivo;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
     }
 
     public String getConsultorio() {

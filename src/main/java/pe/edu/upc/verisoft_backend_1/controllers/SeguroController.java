@@ -41,7 +41,7 @@ public class SeguroController {
         }).collect(Collectors.toList());
     }
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('Oncologo')")
+
     public void eliminar(@PathVariable("id") Integer id){
         mS.delete(id);
 
