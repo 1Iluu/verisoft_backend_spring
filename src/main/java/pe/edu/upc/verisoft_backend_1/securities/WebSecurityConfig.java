@@ -36,7 +36,7 @@ public class WebSecurityConfig implements WebMvcConfigurer {
 
 
 
-    private static final String[] WHITE_LIST_URL = { "/public/**","/api/public/**","/seguros","/seguros/{id}","/users","/roles","/cirugias"};
+    private static final String[] WHITE_LIST_URL = { "/public/**","/api/public/**","/seguros","/seguros/{id}","/users","/roles","/cirugias","/especialidades","/especialidades/{id}"};
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
